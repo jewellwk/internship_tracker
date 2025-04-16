@@ -1,0 +1,22 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h2>Welcome, {{ user_name }}</h2>
+    <a href="{{ url_for('main.index') }}">Home</a> |
+    <a href="{{ url_for('main.add_reminder') }}">Add Reminder</a>
+    <h3>Your Reminders</h3>
+    {% if reminders %}
+        <ul>
+        {% for reminder in reminders %}
+            <li><strong>{{ reminder.title }}</strong> at {{ reminder.time }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No reminders yet.</p>
+    {% endif %}
+</body>
+</html>

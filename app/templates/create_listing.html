@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Create Internship Listing</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h2>Create a New Internship Listing</h2>
+    <form method="POST">
+        <label for="title">Title:</label><br>
+        <input type="text" name="title" id="title" required><br><br>
+
+        <label for="description">Description:</label><br>
+        <textarea name="description" id="description" rows="5" required></textarea><br><br>
+
+        <button type="submit">Post Listing</button>
+    </form>
+    <br>
+    <a href="{{ url_for('main.index') }}">Back to Home</a>
+</body>
+</html>

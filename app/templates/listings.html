@@ -1,0 +1,21 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>All Listings</title>
+</head>
+<body>
+    <h2>Internship Listings</h2>
+    {% for listing in listings %}
+        <div>
+            <h3>{{ listing.title }}</h3>
+            <p>{{ listing.description }}</p>
+            <a href="{{ url_for('main.edit_listing', id=listing.id) }}">Edit</a>
+            <hr>
+        </div>
+    {% else %}
+        <p>No listings yet.</p>
+    {% endfor %}
+    <a href="{{ url_for('main.index') }}">Back to Home</a>
+</body>
+</html>
